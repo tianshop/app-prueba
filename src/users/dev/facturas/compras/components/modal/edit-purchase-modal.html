@@ -1,0 +1,56 @@
+<div class="modal fade purchase-modal" id="editPurchaseModal" tabindex="-1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Editar Factura de Compra</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form class="row g-4" id="editPurchaseForm" style="text-align: center;" novalidate>
+
+          <div class="col-md-6">
+            <label for="fecha" class="form-label">Fecha</label>
+            <input type="date" id="fecha" class="form-control" required />
+          </div>
+
+          <!-- Línea -->
+          <div class="display-flex-center">
+            <div class="line"></div>
+          </div>
+
+          <div class="display-flex-center">
+            <div class="col-md-6">
+              <label for="empresa" class="form-label">Empresa</label>
+              <input id="empresa" class="form-control" placeholder="Empresa" required />
+            </div>
+            <div class="col-md-6">
+              <label for="marca" class="form-label">Marca</label>
+              <input id="marca" class="form-control" placeholder="Marca" required />
+            </div>
+          </div>
+
+          <div>
+            <label for="descripcion" class="form-label">Descripción</label>
+            <input id="descripcion" class="form-control" placeholder="Descripción" required />
+          </div>
+
+          <!-- Línea -->
+          <div class="display-flex-center">
+            <div class="line"></div>
+          </div>
+
+          <div class="display-flex-center">
+            <div class="col-md-6">
+              <label for="venta" class="form-label">Venta</label>
+              <input id="venta" class="form-control" placeholder="Venta" required />
+            </div>
+          </div>
+
+          <div class="col-12 text-center">
+            <button type="submit" class="btn btn-primary">Actualizar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

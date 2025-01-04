@@ -1,0 +1,11 @@
+<!-- barcode-scanner.html -->
+<div id="scanner-container">
+    <h3>Barcode Scanner</h3>
+    <video id="scanner-preview" autoplay></video>
+    <button id="start-scan">Start Scan</button>
+    <button id="stop-scan" disabled>Stop Scan</button>
+    <p id="scan-result">Result: <span id="barcode-result"></span></p>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@ericblade/quagga2@0.0.5/dist/quagga.min.js"></script>
+<script type="module" src="./barcode-scanner.js"></script>

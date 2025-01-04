@@ -17,7 +17,7 @@ export function initializeScanner() {
           height: 2px;
           background: red;
           top: 50%;
-          animation: scan 5s linear infinite;
+          animation: scan 3s linear infinite;
         "></div>
       </div>
       <button id="start-scan" class="btn btn-primary mt-3">Iniciar Escaneo</button>
@@ -97,7 +97,7 @@ export function initializeScanner() {
             }
           },
           locate: true,
-          frequency: 10
+          frequency: 10 // Aumenta la frecuencia de escaneo
         },
         function(err) {
           if (err) {
@@ -137,6 +137,7 @@ export function initializeScanner() {
   let lastResult = null;
   let lastTime = 0;
 
+  // Manejadores de eventos de Quagga
   Quagga.onProcessed((result) => {
     const drawingCanvas = document.getElementById("interactive");
     const drawingContext = drawingCanvas.getContext("2d");
@@ -172,8 +173,9 @@ export function initializeScanner() {
     const currentTime = new Date().getTime();
     const code = data.codeResult.code;
 
+    // Validación para evitar duplicados y asegurar un código válido
     if (code && 
-        (code !== lastResult || currentTime - lastTime > 2000)) {
+        (code !== lastResult || currentTime - lastTime > 2000)) { // 2 segundos entre lecturas
       
       lastResult = code;
       lastTime = currentTime;
@@ -182,10 +184,12 @@ export function initializeScanner() {
       statusElement.textContent = "Estado: ¡Código detectado!";
       console.log("Código detectado:", code);
       
+      // Opcional: vibrar el dispositivo si es móvil
       if (navigator.vibrate) {
         navigator.vibrate(100);
       }
 
+      // Detener el escaneo después de una detección exitosa
       stopScanning();
     }
   });
